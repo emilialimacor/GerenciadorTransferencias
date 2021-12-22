@@ -1,0 +1,36 @@
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Número do Cliente</th>
+      <th scope="col">Nome do Cliente</th>
+      <th scope="col">Valor</th>
+      <th scope="col">Conta do Cliente</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of listarTransferencia">
+      <th>{{ item.id_transferencias }}</th>
+      <td>{{ item.nomeCliente }}</td>
+      <td>{{ item.valor }}</td>
+      <td>{{ item.contaCliente }}</td>
+      <td>
+        <button
+          class="btn btn-light"
+          (click)="editarTransferencias(item.id_transferencias)"
+        >
+          Editar
+        </button>
+      </td>
+      <td>
+        <button
+          class="btn btn-primary"
+          (click)="deleteTransferencias(item.id_transferencias)"
+        >
+          Excluir
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
